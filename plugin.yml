@@ -1,0 +1,8 @@
+name: MultiSpawn
+version: 1.0
+author: LomNar (Edit MishaNeYT)
+main: ru.mishaneyt.multispawn.MultiSpawn
+commands:
+  setspawn:
+  spawn:
+  delspawn:
