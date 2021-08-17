@@ -20,7 +20,7 @@ public class MultiSpawn extends JavaPlugin {
     private FileConfiguration config;
     private File file;
     private Map<String, Location> spawns = new HashMap<String, Location>();
-    private String error = ChatColor.translateAlternateColorCodes('&', "&4У вас нет прав!");
+    private String error = ChatColor.translateAlternateColorCodes('&', "&cУ вас нет прав!");
    
     public void onEnable() {
         loadConfig();
@@ -41,14 +41,14 @@ public class MultiSpawn extends JavaPlugin {
             if (p.hasPermission("multispawn.spawn")) {
                 if (spawns.containsKey(p.getWorld().getName())) {
                     p.teleport(spawns.get(p.getWorld().getName()));
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&eВы были телепортированы на спавн!"));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6MultiSpawn &8| &fВы были телепортированы на спавн!"));
                 } else p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cВ этом мире не указана точка спавна!"));
             } else p.sendMessage(error);
             break;
         case "setspawn":
             if (p.hasPermission("multispawn.setspawn")) {
                 setSpawn(p.getLocation());
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2Вы установили точку спавна в мире: &e" + p.getWorld().getName()));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6MultiSpawn &8| &fВы установили точку спавна, в мире: &a" + p.getWorld().getName()));
             } else p.sendMessage(error);
             break;
 
